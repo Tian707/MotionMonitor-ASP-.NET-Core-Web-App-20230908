@@ -1,0 +1,69 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="5"> <!-- Refresh every 5 seconds -->
+    <title>History</title>
+    <!-- Abootstrap component card -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: calc(50% - 1rem); /* Adjust width for smaller screens */
+            margin-bottom: 1rem;
+        }
+
+        body {
+            background-image: url('/images/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .custom-button {
+            background-color: #A6C1FF; /* Replace with your desired color */
+            color: white; /* Text color for better contrast */
+            border-color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="text-center">
+       
+        <br>
+        <div class="flex-container">
+            <div class="card" ;">
+                <img src="./images/contact.jpg" class="card-img-top" alt="smart home">
+                <div class="card-body">
+                    <h5 class="card-title">Telephone: 2585 2257</h5>
+                    <p class="text-start">
+                        TTelephone Hours: Monday to Friday, 8:00 AM - 7:00 PM<br />
+                        Emergency: 25852276<br />
+                        Email: example@email.com<br />
+                        Address: 123 Main Street, Cityville
+                    </p>
+                    <a href="./Record" class="btn btn-primary custom-button">Send us a Message</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

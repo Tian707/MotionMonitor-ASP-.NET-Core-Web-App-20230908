@@ -1,0 +1,84 @@
+﻿@page
+@model teset09062.Pages.RecordModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="5"> <!-- Refresh every 5 seconds -->
+    <title>Camera Records History | Carport</title>
+    <style>
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            table td, table th {
+                border: 2px solid #ddd;
+                padding: 8px;
+            }
+
+            table tr:nth-child(even) {
+                background-color: #d9e6cf;
+            }
+
+            table tr:hover {
+                background-color: #b5cca3;
+            }
+
+            table th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                background-color: #9EB384;
+                color: white;
+            }
+
+        body {
+            background-image: url('/images/bg4.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="text-center">
+        <br>
+        <h1 class="display-4" style="font-size: 28px; font-weight:400; color: #94A684; ">Camera Records History | Carport</h1>
+        <br>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Distance (cm)</th>
+                <th>Light Count</th>
+                <th>Receiving Time</th>
+            </tr>
+            @if (Model.GetRecords() != null)
+            {
+                var records = Model.GetRecords().Reverse();
+                foreach (var record in records)
+                {
+                    <tr>
+                        <td>@record.ID</td>
+                        <td>@(record.DistanceInCM / 100)</td>
+                        <td>@record.LightCount</td>
+                        <td>@record.ReceivingTime</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4">No records found.</td>
+                </tr>
+            }
+        </table>
+
+    </div>
+
+</body>
+</html>

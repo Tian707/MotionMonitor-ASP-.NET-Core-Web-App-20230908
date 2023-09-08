@@ -1,0 +1,132 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="5"> <!-- Refresh every 5 seconds -->
+    <title>History</title>
+    <!-- Abootstrap component card -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card {
+            width: calc(33.33% - 1rem); /* Adjust width for smaller screens */
+            margin-bottom: 1rem;
+        }
+
+        body {
+            background-image: url('/images/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .custom-button {
+            background-color: #A6C1FF; /* Replace with your desired color */
+            color: white; /* Text color for better contrast */
+            border-color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="text-center">
+        <br />
+        <h1 class="display-4" style="font-size: 38px; font-weight: lighter; color: #666; text-shadow: 1px 1px 2px #ccc;">Welcome to Smart Home</h1>
+        <br>
+        <div class="flex-container">
+            <div class="card" style="width: 18rem;">
+                <img src="./images/smart1.jpg" class="card-img-top" alt="smart home">
+                <div class="card-body">
+                    <h5 class="card-title">Controller</h5>
+                    <p class="text-start">
+                        Security and Surveillance<br />
+                        Notifications and Alerts<br />
+                        Scene Creation<br />
+                        User Profiles and Permissions
+                    </p>
+                    <a href="./Record" class="btn btn-primary custom-button">Go To Settings</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="./images/light.jpg" class="card-img-top" alt="light pic carport">
+                <div class="card-body">
+                    <h5 class="card-title">Light Status | Carport</h5>
+                    <p class="card-text">
+                        @if (Model.GetRecords() != null)
+                        {
+                            var lastRecord = Model.GetRecords().Last();
+
+                        <p class="text-start">
+                            ID: @lastRecord.ID<br />
+                            Distance: @(lastRecord.DistanceInCM / 100) cm<br />
+                            Light Count: @lastRecord.LightCount<br />
+                            Time: @lastRecord.ReceivingTime
+                         </p>
+
+                        }
+                        else
+                        {
+                        <p>No records found.</p>
+                        }
+                    </p>
+                    <a href="./Record" class="btn btn-primary custom-button">Records History</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="./images/cam.jpg" class="card-img-top" alt="camera">
+                <div class="card-body">
+                    <h5 class="card-title">Web Camera | Carport</h5>
+                    
+                    <p class="text-start">
+                        Mobile Alerts<br />
+                        Live Video Streaming<br />
+                        Local Storage<br />
+                        Cloud Storage
+                    </p>
+                    <a href="#" class="btn btn-primary custom-button">Switch Camera</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="./images/risk.jpg" class="card-img-top" alt="light pic carport">
+                <div class="card-body">
+                    <h5 class="card-title">Safety Level</h5>
+                    
+                    <p class="text-start">
+                        Data Analytics and Insights<br />
+                        Firmware Updates<br />
+                        Scheduled Automation<br />
+                        Guest Access
+                        
+                    </p>
+                    <a href="#" class="btn btn-primary custom-button">View All Report</a>
+                </div>
+            </div>
+
+        </div>
+        
+
+
+       
+
+        
+
+            
+
+    </div>
+
+</body>
+</html>
