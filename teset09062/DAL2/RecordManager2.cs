@@ -9,7 +9,7 @@ namespace teset09062.DAL2
         // cannot use AppSettings
         //string connectionString = ConfigurationManager.AppSettings["MyConn"];
         string connectionString = @"Data Source=ZBC-S-tian0247\SQLEXPRESS;Initial Catalog=MotionDetector;Integrated Security=True";
-
+        // string connectionString = @"Data Source=SUS-EL-TWAN1;Initial Catalog=MotionDetector;Integrated Security=True;Trust Server Certificate=True";
         /// <summary>
         /// Get all records from database
         /// save in a list records
